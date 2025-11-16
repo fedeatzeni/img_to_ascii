@@ -1,0 +1,1 @@
+Make a imgs director in the file path and add the imgs in a .jpg extensions. 

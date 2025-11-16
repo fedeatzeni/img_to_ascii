@@ -7,8 +7,16 @@ ascii_chars = "@%#*+=-:. "
 def pixel_to_ascii(pixel):
     return ascii_chars[pixel * len(ascii_chars) // 256] # pixel è un valore 0-255 (scala di grigi)
 
-BASE = os.path.dirname(os.path.abspath(__file__))
-PATH = os.path.join(BASE, "img.jpg")
+BASE = os.path.dirname(os.path.abspath(__file__))  # script directory
+IMG_FOLDER = os.path.join(BASE, "imgs")            # entra in imgs
+
+IMG_FOLDER = os.path.abspath(IMG_FOLDER)           # normalizza il percorso
+
+print("Cartella immagini:", IMG_FOLDER)
+
+name = input("Insert file name (es: Name.jpg): ")
+
+PATH = os.path.join(IMG_FOLDER, name)
 
 img = Image.open(PATH)
 img = img.resize((125, 75))  # resize
